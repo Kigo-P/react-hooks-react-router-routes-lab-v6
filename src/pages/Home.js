@@ -12,7 +12,11 @@ useEffect(() =>{
   .catch(error => console.error(error))
 }, [])
 
-const movieList = movies.map(movie => <MovieCard key={movie.id} title={movie.title} id={movie.id}/>)
+const movieList = movies.map(movie => {
+  <li>
+    <MovieCard  title={movie.title} id={movie.id}/>
+  </li>
+})
 
   return (
     <>
@@ -21,7 +25,9 @@ const movieList = movies.map(movie => <MovieCard key={movie.id} title={movie.tit
       </header>
       <main>
         <h1>Home Page</h1>
+        <ul key={movies.id}>
         {movieList}
+        </ul>
       </main>
     </>
   );
