@@ -12,11 +12,7 @@ function Directors() {
     .catch(error => console.error(error))
   }, [])
 
-  const directorList = directors.map(director => {
-    <li>
-      <Card key={director.id} name={director.name} movies={director.movies} />
-    </li>
-  })
+  const directorList = directors.map(director => <Card key={director.id} name={director.name} movies={director.movies} />)
 
   return (
     <>
@@ -25,9 +21,7 @@ function Directors() {
       </header>
       <main>
         <h1>Directors Page</h1>
-        <ul>
         {directorList}
-        </ul>
       </main>
     </>
   );
