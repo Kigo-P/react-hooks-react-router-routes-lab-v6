@@ -1,16 +1,32 @@
 import { useEffect, useState } from "react";
+import Card from "../components/ReusableCard";
+import NavBar from "../components/NavBar";
 
 function Directors() {
+  const [directors, setDirectors] = useState([])
+
+  useEffect(() =>{
+    fetch("http://localhost:4000/directors")
+    .then(r => r.json())
+    .then(data => setDirectors(data))
+    .catch(error => console.error(error))
+  }, [])
+
+  const directorList = directors.map(director => <li key={director.id}><Card  name={director.name} movies={director.movies}/></li> )
+
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <NavBar />
       </header>
       <main>
-        {/* Director info here! */}
+        <h1>Directors Page</h1>
+        <ul>
+        {directorList}
+        </ul>
       </main>
     </>
   );
-};
+}
 
 export default Directors;
