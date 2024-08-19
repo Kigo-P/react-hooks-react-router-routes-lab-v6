@@ -1,13 +1,18 @@
 
 function Card({name, movies}) {
-    const movieList = movies.map(movie => <li key={movie}>{movie}</li>)
+    const movieList = movies.map(movie => {
+        <ul key={movie}>
+            <li>{movie}</li>
+        </ul>
+    
+})
     
     return (
       <article>
           <h2>{name}</h2>
-          <ul>
-              {movieList}
-          </ul>
+          
+            {movieList}
+        
       </article>
     )
   }

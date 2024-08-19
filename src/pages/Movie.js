@@ -19,7 +19,11 @@ function Movie() {
     return <h1>Loading...</h1>
   }
 
-  const genres = movie.genres.map(genre => <li key={genre}><span >{genre}</span></li>)
+  const genres = movie.genres.map(genre => {
+    <ul key={genre}>
+      <li><span >{genre}</span></li>
+    </ul>
+  })
 
   return (
     <>
@@ -29,9 +33,7 @@ function Movie() {
       <main>
         <h1>{movie.title}</h1>
         <p>{movie.time}</p>
-        <ul>
         {genres}
-        </ul>
       </main>
     </>
   );

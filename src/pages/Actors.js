@@ -12,7 +12,11 @@ function Actors() {
     .catch(error => console.error(error))
   }, [])
 
-const actorList = actors.map(actor => <li key={actor.id}><Card  name={actor.name} movies={actor.movies} /></li>)
+const actorList = actors.map(actor => {
+  <ul key={actor.id}>
+    <li><Card  name={actor.name} movies={actor.movies} /></li>
+  </ul>
+})
 
   return (
     <>
@@ -21,10 +25,7 @@ const actorList = actors.map(actor => <li key={actor.id}><Card  name={actor.name
       </header>
       <main>
         <h1>Actors Page</h1>
-        <ul>
         {actorList}
-        </ul>
-        
       </main>
     </>
   );
