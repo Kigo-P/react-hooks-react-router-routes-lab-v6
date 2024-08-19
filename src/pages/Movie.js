@@ -19,11 +19,7 @@ function Movie() {
     return <h1>Loading...</h1>
   }
 
-  const genres = movie.genres.map(genre => {
-    <ul key={genre}>
-      <li><span >{genre}</span></li>
-    </ul>
-  })
+  const genres = movie.genres.map(genre => <span key={genre}>{genre}</span>)
 
   return (
     <>
