@@ -13,7 +13,7 @@ function Actors() {
   }, [])
 
   const actorList = actors.map(actor => <Card key={actor.id} name={actor.name} movies={actor.movies} />)
-
+ 
   return (
     <>
       <header>
